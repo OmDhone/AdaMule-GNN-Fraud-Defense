@@ -1,0 +1,42 @@
+# Adversarial Attack & Constraints Configuration
+
+constraints:
+  min_transaction_amount: 10.0
+  max_transaction_amount: 100000.0
+  max_hourly_frequency: 10
+  max_daily_frequency: 50
+  amount_preservation_tolerance: 0.05
+  min_inter_arrival_seconds: 60
+  max_temporal_backtracking_seconds: 0  # Transfers cannot happen back-in-time
+
+budget:
+  max_steps: 15
+  max_edges_added: 8
+  max_edges_modified: 10
+  max_amount_shift: 0.20
+  perturbation_budget: 10
+
+reward:
+  confidence_reduction_weight: 2.0
+  constraint_violation_penalty: 5.0
+  structural_unrealism_penalty: 1.0
+  step_cost: 0.05
+
+heuristic:
+  target_degree_reduction: 0.3
+  smurfing_splits: 3
+  camouflage_merchant_ratio: 0.4
+
+gradient:
+  learning_rate: 0.05
+  num_iterations: 20
+  projection_steps: 5
+
+rl:
+  algorithm: PPO
+  total_timesteps: 5000
+  learning_rate: 0.0003
+  gamma: 0.99
+  ent_coef: 0.01
+  batch_size: 64
+  n_steps: 128

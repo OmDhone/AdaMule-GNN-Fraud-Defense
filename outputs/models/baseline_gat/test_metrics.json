@@ -1,0 +1,16 @@
+{
+  "precision": 0.6,
+  "recall": 1.0,
+  "f1": 0.75,
+  "roc_auc": 0.7778,
+  "pr_auc": 0.8667,
+  "fpr": 0.6667,
+  "fnr": 0.0,
+  "true_positives": 3,
+  "false_positives": 2,
+  "true_negatives": 1,
+  "false_negatives": 0,
+  "hard_negative_total": 1,
+  "hard_negative_false_positives": 1,
+  "hard_negative_fpr": 1.0
+}

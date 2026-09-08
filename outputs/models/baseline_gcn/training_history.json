@@ -1,0 +1,103 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "loss_total": 0.5493495464324951,
+      "val_f1": 0.75,
+      "val_roc_auc": 0.5,
+      "val_pr_auc": 0.7462,
+      "val_recall": 1.0,
+      "val_precision": 0.6
+    },
+    {
+      "epoch": 2,
+      "loss_total": 0.49880772829055786,
+      "val_f1": 0.75,
+      "val_roc_auc": 0.5417,
+      "val_pr_auc": 0.7878,
+      "val_recall": 1.0,
+      "val_precision": 0.6
+    },
+    {
+      "epoch": 3,
+      "loss_total": 0.48949599266052246,
+      "val_f1": 0.75,
+      "val_roc_auc": 0.4583,
+      "val_pr_auc": 0.7212,
+      "val_recall": 1.0,
+      "val_precision": 0.6
+    },
+    {
+      "epoch": 4,
+      "loss_total": 0.48110198974609375,
+      "val_f1": 0.75,
+      "val_roc_auc": 0.5,
+      "val_pr_auc": 0.7272,
+      "val_recall": 1.0,
+      "val_precision": 0.6
+    },
+    {
+      "epoch": 5,
+      "loss_total": 0.46649301052093506,
+      "val_f1": 0.75,
+      "val_roc_auc": 0.5,
+      "val_pr_auc": 0.7272,
+      "val_recall": 1.0,
+      "val_precision": 0.6
+    },
+    {
+      "epoch": 6,
+      "loss_total": 0.4565185308456421,
+      "val_f1": 0.75,
+      "val_roc_auc": 0.5,
+      "val_pr_auc": 0.7272,
+      "val_recall": 1.0,
+      "val_precision": 0.6
+    },
+    {
+      "epoch": 7,
+      "loss_total": 0.4483379125595093,
+      "val_f1": 0.75,
+      "val_roc_auc": 0.5,
+      "val_pr_auc": 0.7272,
+      "val_recall": 1.0,
+      "val_precision": 0.6
+    },
+    {
+      "epoch": 8,
+      "loss_total": 0.44480425119400024,
+      "val_f1": 0.75,
+      "val_roc_auc": 0.5,
+      "val_pr_auc": 0.7272,
+      "val_recall": 1.0,
+      "val_precision": 0.6
+    },
+    {
+      "epoch": 9,
+      "loss_total": 0.4488338232040405,
+      "val_f1": 0.75,
+      "val_roc_auc": 0.5,
+      "val_pr_auc": 0.7272,
+      "val_recall": 1.0,
+      "val_precision": 0.6
+    },
+    {
+      "epoch": 10,
+      "loss_total": 0.4431021511554718,
+      "val_f1": 0.75,
+      "val_roc_auc": 0.5417,
+      "val_pr_auc": 0.7438,
+      "val_recall": 1.0,
+      "val_precision": 0.6
+    },
+    {
+      "epoch": 11,
+      "loss_total": 0.4413607120513916,
+      "val_f1": 0.75,
+      "val_roc_auc": 0.5417,
+      "val_pr_auc": 0.7438,
+      "val_recall": 1.0,
+      "val_precision": 0.6
+    }
+  ]
+}

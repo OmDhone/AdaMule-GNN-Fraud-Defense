@@ -1,0 +1,20 @@
+{
+  "rounds": [
+    {
+      "round": 1,
+      "clean_recall": 1.0,
+      "adversarial_recall": 1.0,
+      "recall_drop": 0.0,
+      "f1": 0.75,
+      "hard_negative_fpr": 1.0
+    },
+    {
+      "round": 2,
+      "clean_recall": 0.6667,
+      "adversarial_recall": 0.6667,
+      "recall_drop": 0.0,
+      "f1": 0.8,
+      "hard_negative_fpr": 0.0
+    }
+  ]
+}

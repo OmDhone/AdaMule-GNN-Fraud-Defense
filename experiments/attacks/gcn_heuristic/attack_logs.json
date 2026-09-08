@@ -1,0 +1,208 @@
+{
+  "logs": [
+    {
+      "target_node": 154,
+      "initial_prob": 0.6394,
+      "final_prob": 0.6394,
+      "prob_reduction": 0.0,
+      "evaded": false,
+      "steps_taken": 8,
+      "edges_added": 4,
+      "edges_modified": 2,
+      "history": [
+        {
+          "step": 1,
+          "action": "smurf_split",
+          "prev_prob": 0.6394,
+          "curr_prob": 0.6394,
+          "reward": -0.05
+        },
+        {
+          "step": 2,
+          "action": "merchant_camouflage_edge",
+          "prev_prob": 0.6394,
+          "curr_prob": 0.6394,
+          "reward": -0.05
+        },
+        {
+          "step": 3,
+          "action": "smurf_split",
+          "prev_prob": 0.6394,
+          "curr_prob": 0.6394,
+          "reward": -0.05
+        },
+        {
+          "step": 4,
+          "action": "merchant_camouflage_edge",
+          "prev_prob": 0.6394,
+          "curr_prob": 0.6394,
+          "reward": -0.05
+        },
+        {
+          "step": 5,
+          "action": "none",
+          "prev_prob": 0.6394,
+          "curr_prob": 0.6394,
+          "reward": -0.05
+        },
+        {
+          "step": 6,
+          "action": "merchant_camouflage_edge",
+          "prev_prob": 0.6394,
+          "curr_prob": 0.6394,
+          "reward": -0.05
+        },
+        {
+          "step": 7,
+          "action": "none",
+          "prev_prob": 0.6394,
+          "curr_prob": 0.6394,
+          "reward": -0.05
+        },
+        {
+          "step": 8,
+          "action": "merchant_camouflage_edge",
+          "prev_prob": 0.6394,
+          "curr_prob": 0.6394,
+          "reward": -0.05
+        }
+      ]
+    },
+    {
+      "target_node": 394,
+      "initial_prob": 0.6931,
+      "final_prob": 0.7398,
+      "prob_reduction": -0.0467,
+      "evaded": false,
+      "steps_taken": 8,
+      "edges_added": 4,
+      "edges_modified": 3,
+      "history": [
+        {
+          "step": 1,
+          "action": "smurf_split",
+          "prev_prob": 0.6931,
+          "curr_prob": 0.7182,
+          "reward": -0.1002
+        },
+        {
+          "step": 2,
+          "action": "merchant_camouflage_edge",
+          "prev_prob": 0.7182,
+          "curr_prob": 0.7182,
+          "reward": -0.05
+        },
+        {
+          "step": 3,
+          "action": "smurf_split",
+          "prev_prob": 0.7182,
+          "curr_prob": 0.7316,
+          "reward": -0.0768
+        },
+        {
+          "step": 4,
+          "action": "merchant_camouflage_edge",
+          "prev_prob": 0.7316,
+          "curr_prob": 0.7316,
+          "reward": -0.05
+        },
+        {
+          "step": 5,
+          "action": "none",
+          "prev_prob": 0.7316,
+          "curr_prob": 0.7316,
+          "reward": -0.05
+        },
+        {
+          "step": 6,
+          "action": "merchant_camouflage_edge",
+          "prev_prob": 0.7316,
+          "curr_prob": 0.7316,
+          "reward": -0.05
+        },
+        {
+          "step": 7,
+          "action": "smurf_split",
+          "prev_prob": 0.7316,
+          "curr_prob": 0.7398,
+          "reward": -0.0665
+        },
+        {
+          "step": 8,
+          "action": "merchant_camouflage_edge",
+          "prev_prob": 0.7398,
+          "curr_prob": 0.7398,
+          "reward": -0.05
+        }
+      ]
+    },
+    {
+      "target_node": 478,
+      "initial_prob": 0.6363,
+      "final_prob": 0.6363,
+      "prob_reduction": 0.0,
+      "evaded": false,
+      "steps_taken": 8,
+      "edges_added": 4,
+      "edges_modified": 2,
+      "history": [
+        {
+          "step": 1,
+          "action": "smurf_split",
+          "prev_prob": 0.6363,
+          "curr_prob": 0.6363,
+          "reward": -0.05
+        },
+        {
+          "step": 2,
+          "action": "merchant_camouflage_edge",
+          "prev_prob": 0.6363,
+          "curr_prob": 0.6363,
+          "reward": -0.05
+        },
+        {
+          "step": 3,
+          "action": "smurf_split",
+          "prev_prob": 0.6363,
+          "curr_prob": 0.6363,
+          "reward": -0.05
+        },
+        {
+          "step": 4,
+          "action": "merchant_camouflage_edge",
+          "prev_prob": 0.6363,
+          "curr_prob": 0.6363,
+          "reward": -0.05
+        },
+        {
+          "step": 5,
+          "action": "none",
+          "prev_prob": 0.6363,
+          "curr_prob": 0.6363,
+          "reward": -0.05
+        },
+        {
+          "step": 6,
+          "action": "merchant_camouflage_edge",
+          "prev_prob": 0.6363,
+          "curr_prob": 0.6363,
+          "reward": -0.05
+        },
+        {
+          "step": 7,
+          "action": "none",
+          "prev_prob": 0.6363,
+          "curr_prob": 0.6363,
+          "reward": -0.05
+        },
+        {
+          "step": 8,
+          "action": "merchant_camouflage_edge",
+          "prev_prob": 0.6363,
+          "curr_prob": 0.6363,
+          "reward": -0.05
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# Training & Optimization Configuration
+
+training:
+  epochs: 50
+  batch_size: 256
+  learning_rate: 0.005
+  weight_decay: 0.0001
+  optimizer: adam
+  lr_scheduler: cosine
+  min_lr: 0.0001
+  early_stopping_patience: 10
+  eval_frequency: 1
+  device: cpu
+
+adversarial_training:
+  rounds: 4
+  epochs_per_round: 15
+  attack_method: heuristic  # heuristic, gradient, rl
+  adversarial_ratio: 0.3
+  hardened_buffer_max_size: 1000
+  unfreeze_detector: true

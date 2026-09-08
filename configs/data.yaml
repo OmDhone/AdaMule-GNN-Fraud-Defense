@@ -1,0 +1,73 @@
+# Data Generation & Preprocessing Configuration
+
+default_profile: development
+
+profiles:
+  development:
+    num_accounts: 500
+    num_merchants: 50
+    num_devices: 400
+    num_ips: 300
+    num_transactions: 3000
+    fraud_ratio: 0.08
+    time_span_days: 30
+    temporal_split:
+      train_ratio: 0.60
+      val_ratio: 0.20
+      test_ratio: 0.20
+    scenarios:
+      scenario_a_weight: 0.35  # Normal P2P
+      scenario_b_weight: 0.25  # Legitimate merchant aggregator (hard negative)
+      scenario_c_weight: 0.10  # Normal irregular merchant
+      scenario_d_weight: 0.05  # Basic linear mule ring
+      scenario_e_weight: 0.05  # Fan-in mule
+      scenario_f_weight: 0.05  # Fan-out mule
+      scenario_g_weight: 0.05  # Layered mule network
+      scenario_h_weight: 0.05  # Camouflaged mule network
+      scenario_i_weight: 0.00  # Adaptive structuring (generated dynamically)
+
+  medium:
+    num_accounts: 2500
+    num_merchants: 250
+    num_devices: 2000
+    num_ips: 1500
+    num_transactions: 20000
+    fraud_ratio: 0.06
+    time_span_days: 60
+    temporal_split:
+      train_ratio: 0.60
+      val_ratio: 0.20
+      test_ratio: 0.20
+    scenarios:
+      scenario_a_weight: 0.35
+      scenario_b_weight: 0.25
+      scenario_c_weight: 0.10
+      scenario_d_weight: 0.06
+      scenario_e_weight: 0.06
+      scenario_f_weight: 0.06
+      scenario_g_weight: 0.06
+      scenario_h_weight: 0.06
+      scenario_i_weight: 0.00
+
+  research:
+    num_accounts: 10000
+    num_merchants: 1000
+    num_devices: 8000
+    num_ips: 6000
+    num_transactions: 100000
+    fraud_ratio: 0.05
+    time_span_days: 90
+    temporal_split:
+      train_ratio: 0.60
+      val_ratio: 0.20
+      test_ratio: 0.20
+    scenarios:
+      scenario_a_weight: 0.35
+      scenario_b_weight: 0.25
+      scenario_c_weight: 0.10
+      scenario_d_weight: 0.06
+      scenario_e_weight: 0.06
+      scenario_f_weight: 0.06
+      scenario_g_weight: 0.06
+      scenario_h_weight: 0.06
+      scenario_i_weight: 0.00

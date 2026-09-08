@@ -1,0 +1,12 @@
+Experiment,Description,Clean Recall,Attack Recall,Recall Drop,F1-Score,PR-AUC,Overall FPR,Hard-Negative FPR
+EXP_A,Experiment A: Baseline GCN (Clean),1.0,1.0,0.0,0.6667,1.0,1.0,1.0
+EXP_B,Experiment B: Baseline GCN under Adversarial Attack,1.0,1.0,0.0,0.6667,0.0,0.0,1.0
+EXP_C,Experiment C: Baseline GAT under Adversarial Attack,1.0,1.0,0.0,0.75,0.0,0.0,1.0
+EXP_D,Experiment D: CARE-GNN / FRAUDRE under Adversarial Attack,1.0,1.0,0.0,0.6667,0.0,0.0,1.0
+EXP_E,Experiment E: AdaMule without Robust Training,1.0,1.0,0.0,0.6667,0.8056,1.0,1.0
+EXP_F,Experiment F: AdaMule with Robust Training,1.0,1.0,0.0,0.6667,0.0,0.0,1.0
+EXP_G,Experiment G: AdaMule with Legitimacy Module,0.3333,0.3333,0.0,0.5,0.8667,0.0,0.0
+EXP_H,Experiment H: AdaMule (Full: Legitimacy + Robust Training),0.3333,0.3333,0.0,0.5,0.0,0.0,0.0
+EXP_I,Experiment I: Ablation without Attack Constraints,0.3333,0.3333,0.0,0.5,0.0,0.0,0.0
+EXP_J,Experiment J: Ablation without Legitimacy Loss,0.6667,0.6667,0.0,0.8,0.0,0.0,0.0
+EXP_K,Experiment K: Ablation without Adversarial Training,1.0,1.0,0.0,0.6667,0.0,0.0,1.0

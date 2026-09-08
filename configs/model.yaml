@@ -1,0 +1,58 @@
+# Model Architectures & Hyperparameters Configuration
+
+default:
+  node_feature_dim: 32
+  edge_feature_dim: 16
+  hidden_dim: 64
+  num_layers: 2
+  dropout: 0.2
+  activation: relu
+
+gcn:
+  hidden_dim: 64
+  num_layers: 2
+  dropout: 0.2
+  use_batch_norm: true
+
+gat:
+  hidden_dim: 64
+  num_layers: 2
+  num_heads: 4
+  dropout: 0.2
+  attention_dropout: 0.1
+
+care_gnn:
+  hidden_dim: 64
+  num_layers: 2
+  dropout: 0.2
+  threshold: 0.5
+  relation_types: ["transfers", "shared_device", "shared_ip"]
+
+fraudre:
+  hidden_dim: 64
+  num_layers: 2
+  dropout: 0.2
+  beta_balance: 0.5
+
+temporal:
+  hidden_dim: 64
+  time_dim: 16
+  num_layers: 2
+  dropout: 0.2
+
+adamule:
+  hidden_dim: 64
+  time_dim: 16
+  num_layers: 2
+  num_heads: 4
+  dropout: 0.2
+  use_batch_norm: true
+  legitimacy_module:
+    hidden_dim: 32
+    num_classes: 2  # 0: non-legitimate / regular, 1: legitimate merchant profile
+    temperature: 0.1
+    contrastive: true
+  loss_weights:
+    lambda_fraud: 1.0
+    lambda_legitimacy: 0.5
+    lambda_robustness: 0.3

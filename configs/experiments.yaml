@@ -1,0 +1,79 @@
+# Experiments A through K Configuration
+
+experiments:
+  exp_a:
+    name: "Experiment A: Baseline GCN (Clean)"
+    model: "gcn"
+    attack: "none"
+    robust_training: false
+    legitimacy_module: false
+
+  exp_b:
+    name: "Experiment B: Baseline GCN under Adversarial Attack"
+    model: "gcn"
+    attack: "heuristic"
+    robust_training: false
+    legitimacy_module: false
+
+  exp_c:
+    name: "Experiment C: Baseline GAT under Adversarial Attack"
+    model: "gat"
+    attack: "heuristic"
+    robust_training: false
+    legitimacy_module: false
+
+  exp_d:
+    name: "Experiment D: CARE-GNN / FRAUDRE under Adversarial Attack"
+    model: "care_gnn"
+    attack: "heuristic"
+    robust_training: false
+    legitimacy_module: false
+
+  exp_e:
+    name: "Experiment E: AdaMule without Robust Training"
+    model: "adamule"
+    attack: "heuristic"
+    robust_training: false
+    legitimacy_module: true
+
+  exp_f:
+    name: "Experiment F: AdaMule with Robust Training"
+    model: "adamule"
+    attack: "heuristic"
+    robust_training: true
+    legitimacy_module: false
+
+  exp_g:
+    name: "Experiment G: AdaMule with Legitimacy Module"
+    model: "adamule"
+    attack: "none"
+    robust_training: false
+    legitimacy_module: true
+
+  exp_h:
+    name: "Experiment H: AdaMule (Full: Legitimacy + Robust Training)"
+    model: "adamule"
+    attack: "heuristic"
+    robust_training: true
+    legitimacy_module: true
+
+  exp_i:
+    name: "Experiment I: Ablation without Attack Constraints"
+    model: "adamule"
+    attack: "unconstrained_heuristic"
+    robust_training: true
+    legitimacy_module: true
+
+  exp_j:
+    name: "Experiment J: Ablation without Legitimacy Loss"
+    model: "adamule"
+    attack: "heuristic"
+    robust_training: true
+    legitimacy_module: false
+
+  exp_k:
+    name: "Experiment K: Ablation without Adversarial Training"
+    model: "adamule"
+    attack: "heuristic"
+    robust_training: false
+    legitimacy_module: true

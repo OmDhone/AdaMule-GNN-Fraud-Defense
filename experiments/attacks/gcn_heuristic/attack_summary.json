@@ -1,0 +1,14 @@
+{
+  "clean_recall": 1.0,
+  "adversarial_recall": 1.0,
+  "recall_drop": 0.0,
+  "robustness_ratio": 1.0,
+  "clean_f1": 0.6667,
+  "adversarial_f1": 0.6667,
+  "clean_fpr": 1.0,
+  "adversarial_fpr": 1.0,
+  "hard_negative_fpr": 1.0,
+  "attack_success_rate": 0.0,
+  "total_attacked_nodes": 3,
+  "evaded_nodes": 0
+}
