@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdaMule: Cyber Heist & AML Defense War Room</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="warroom-header">
+        <div class="brand-title">
+            <span>🛡️ ADAMULE</span>
+            <span class="brand-badge">CYBER DEFENSE WAR ROOM</span>
+        </div>
+
+        <!-- Mode Navigation Switcher -->
+        <div class="mode-tabs">
+            <button class="mode-tab active-red" id="tabHeist" onclick="switchMode('heist')">
+                🚨 Syndicate Heist (Red Team)
+            </button>
+            <button class="mode-tab" id="tabSentinel" onclick="switchMode('sentinel')">
+                🛡️ Defense Sentinel (Blue Team)
+            </button>
+            <button class="mode-tab" id="tabUPI" onclick="switchMode('upi')">
+                📱 UPI Phone Simulator
+            </button>
+        </div>
+
+        <div class="header-controls">
+            <button class="btn-ctrl" id="sarBtn" onclick="openSARModal()">📄 Generate SAR</button>
+            <button class="btn-ctrl" id="audioBtn" onclick="toggleAudio()">🔊 Audio On</button>
+        </div>
+    </header>
+
+    <!-- Main Grid -->
+    <main class="warroom-container">
+
+        <!-- Left Panel: Mode Dependent Controls -->
+        <section class="glass-panel" id="leftPanel">
+
+            <!-- MODE 1: RED TEAM SYNDICATE HEIST -->
+            <div id="deckHeist" class="syndicate-deck">
+                <div class="panel-header" style="background: rgba(220, 38, 38, 0.2); border-bottom: 1px solid rgba(239, 68, 68, 0.3);">
+                    <span style="color: #f87171;">☠️ CRIMINAL SYNDICATE CONSOLE</span>
+                    <span style="font-size: 0.7rem; color: #fca5a5;">EVASION ATTACK AGENT</span>
+                </div>
+                
+                <div class="panel-body">
+                    <!-- Illicit Loot Slider -->
+                    <div class="stat-card" style="border-color: rgba(239, 68, 68, 0.3);">
+                        <div class="stat-label">Stolen Illicit Loot to Launder</div>
+                        <div class="stat-val" id="lootDisplay" style="color: #f87171;">₹10,00,000</div>
+                        <input type="range" class="loot-slider" id="lootRange" min="100000" max="5000000" step="50000" value="1000000" oninput="updateLootAmount(this.value)">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.65rem; color: #94a3b8; margin-top: 4px;">
+                            <span>₹1 Lakh</span>
+                            <span>₹25 Lakhs</span>
+                            <span>₹50 Lakhs</span>
+                        </div>
+                    </div>
+
+                    <!-- Attack Vector Toggles -->
+                    <div class="stat-card" style="margin-top: 10px;">
+                        <div class="stat-label" style="margin-bottom: 8px;">Adversarial Evasion Vectors</div>
+                        <div class="toggles-grid">
+                            
+                            <!-- Smurfing -->
+                            <div class="cyber-toggle-row">
+                                <div>
+                                    <div class="cyber-toggle-info">✂️ Smurfing / Structuring</div>
+                                    <div class="cyber-toggle-sub">Split into micro-transfers &lt; ₹50,000</div>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="toggleSmurf" checked onchange="updateHeistOdds()">
+                                    <span class="slider-round"></span>
+                                </label>
+                            </div>
+
+                            <!-- Merchant Camouflage -->
+                            <div class="cyber-toggle-row">
+                                <div>
+                                    <div class="cyber-toggle-info">🏬 Merchant Camouflage</div>
+                                    <div class="cyber-toggle-sub">Spray micro-payments to grocery & chai shops</div>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="toggleCamouflage" checked onchange="updateHeistOdds()">
+                                    <span class="slider-round"></span>
+                                </label>
+                            </div>
+
+                            <!-- Temporal Jitter -->
+                            <div class="cyber-toggle-row">
+                                <div>
+                                    <div class="cyber-toggle-info">⏳ Temporal Hop Delay</div>
+                                    <div class="cyber-toggle-sub">Inject 4hr delays to evade burst filters</div>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="toggleJitter" checked onchange="updateHeistOdds()">
+                                    <span class="slider-round"></span>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Layering Hops -->
+                    <div class="stat-card" style="margin-top: 10px;">
+                        <div class="stat-label">Layering Depth (Hops)</div>
+                        <div style="display: flex; gap: 8px; margin-top: 6px;">
+                            <button class="btn-ctrl" style="flex: 1; justify-content: center;" onclick="setHops(2, this)">2 Hops</button>
+                            <button class="btn-ctrl" style="flex: 1; justify-content: center; border-color: var(--neon-cyan); color: var(--neon-cyan);" id="hopBtn3" onclick="setHops(3, this)">3 Hops</button>
+                            <button class="btn-ctrl" style="flex: 1; justify-content: center;" onclick="setHops(5, this)">5 Hops (Deep)</button>
+                        </div>
+                    </div>
+
+                    <!-- Attack Odds Telemetry -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0;">
+                        <div class="stat-card" style="text-align: center; padding: 8px;">
+                            <div class="stat-label">Legacy GCN Evasion</div>
+                            <div style="font-size: 1.2rem; font-weight: 800; color: #f87171;" id="gcnOdds">94% (High)</div>
+                        </div>
+                        <div class="stat-card" style="text-align: center; padding: 8px;">
+                            <div class="stat-label">AdaMule Evasion</div>
+                            <div style="font-size: 1.2rem; font-weight: 800; color: #34d399;" id="adamuleOdds">8% (Blocked)</div>
+                        </div>
+                    </div>
+
+                    <button class="btn-heist" onclick="executeSyndicateHeist()">
+                        🚨 EXECUTE SYNDICATE HEIST ⚡
+                    </button>
+                </div>
+            </div>
+
+            <!-- MODE 2: BLUE TEAM SENTINEL CONTROLS -->
+            <div id="deckSentinel" class="syndicate-deck" style="display: none;">
+                <div class="panel-header" style="background: rgba(16, 185, 129, 0.2); border-bottom: 1px solid rgba(16, 185, 129, 0.3);">
+                    <span style="color: #34d399;">🛡️ DEFENSE SENTINEL CONSOLE</span>
+                    <span style="font-size: 0.7rem; color: #a7f3d0;">GRAPH INTELLIGENCE</span>
+                </div>
+                
+                <div class="panel-body">
+                    <div class="stat-card">
+                        <div class="stat-label">Active Monitoring Policy</div>
+                        <div style="font-size: 1.1rem; font-weight: 800; color: #34d399; margin-bottom: 6px;">Min-Max Robust Retrained</div>
+                        <div style="font-size: 0.75rem; color: #94a3b8;">Fourier continuous-time encoding with legitimacy regularizer enabled.</div>
+                    </div>
+
+                    <div class="stat-card" style="margin-top: 10px;">
+                        <div class="stat-label">Autonomous Countermeasures</div>
+                        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+                            <button class="btn-ctrl" style="width: 100%; justify-content: flex-start;" onclick="runContinuousXRay()">
+                                ⚡ Run Continuous Graph X-Ray
+                            </button>
+                            <button class="btn-ctrl" style="width: 100%; justify-content: flex-start;" onclick="freezeAllMules()">
+                                ❄️ Freeze All Flagged Mule Nodes
+                            </button>
+                            <button class="btn-ctrl" style="width: 100%; justify-content: flex-start;" onclick="unmaskCamouflageTrails()">
+                                👁️ Unmask Camouflage Edges
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="stat-card" style="margin-top: 10px;">
+                        <div class="stat-label">Model Benchmark Proof</div>
+                        <div style="font-size: 0.8rem; line-height: 1.5; color: #cbd5e1; margin-top: 6px;">
+                            • <b>Hard-Negative FPR:</b> <span style="color: #34d399;">0.0000</span> (GCN: 1.0000)<br>
+                            • <b>Adversarial Robustness Ratio:</b> <span style="color: #34d399;">1.0000</span><br>
+                            • <b>Merchant Protection:</b> 100% Guaranteed
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODE 3: UPI PHONE SIMULATOR -->
+            <div id="deckUPI" style="display: none; padding: 10px;">
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <div>
+                            <div class="upi-header">
+                                <div class="upi-logo">⚡ FAST-PAY UPI</div>
+                                <div style="font-size: 0.7rem; color: #94a3b8;">Simulated Banking Rail</div>
+                            </div>
+
+                            <div style="font-size: 0.75rem; color: #94a3b8; margin-bottom: 6px;">Select Payee:</div>
+                            
+                            <div class="recipient-card" style="border-color: #38bdf8;" onclick="selectRecipient('Rohan V. (Student Mule)', 'rohan88@okaxis', 'mule', this)">
+                                <div class="recipient-avatar" style="background: #ef4444; color: #fff;">RV</div>
+                                <div>
+                                    <div style="font-weight: 700; font-size: 0.8rem;" id="selectedRecipName">Rohan V. (Student Mule)</div>
+                                    <div style="font-size: 0.65rem; color: #94a3b8;" id="selectedRecipUPI">rohan88@okaxis</div>
+                                </div>
+                            </div>
+
+                            <div class="recipient-card" onclick="selectRecipient('Sharma Kirana (Merchant)', 'sharmastore@paytm', 'merchant', this)">
+                                <div class="recipient-avatar" style="background: #10b981; color: #fff;">SK</div>
+                                <div>
+                                    <div style="font-weight: 700; font-size: 0.8rem;">Sharma Kirana Store</div>
+                                    <div style="font-size: 0.65rem; color: #94a3b8;">sharmastore@paytm</div>
+                                </div>
+                            </div>
+
+                            <div class="amt-input-box">
+                                <span>₹</span>
+                                <input type="number" id="paymentAmount" value="48500">
+                            </div>
+
+                            <div class="quick-chips">
+                                <span class="chip" onclick="setQuickAmount(250)">₹250</span>
+                                <span class="chip" onclick="setQuickAmount(5000)">₹5,000</span>
+                                <span class="chip" onclick="setQuickAmount(48500)">₹48,500</span>
+                                <span class="chip" onclick="setQuickAmount(90000)">₹90,000</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-pay" onclick="executeUPIPayment()">Pay via UPI PIN ⚡</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Center: Interactive Force Graph & Dual AI Battle -->
+        <section class="glass-panel" style="position: relative;">
+            <div class="panel-header">
+                <span id="visionLabel" style="color: #10b981;">Mode: AdaMule Robust Defense (Min-Max Hardened)</span>
+                <span style="font-size: 0.72rem; color: #94a3b8;">DRAG NODES | HOVER TO INSPECT</span>
+            </div>
+            
+            <div class="canvas-container">
+                <div class="canvas-overlay">
+                    <div class="canvas-badge">
+                        <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#10b981;"></span>
+                        <span id="canvasStatusText">Graph Physics Engine Active (60 FPS)</span>
+                    </div>
+
+                    <div class="lens-slider-box">
+                        <span>Legitimacy Lens:</span>
+                        <input type="range" id="lensSlider" min="0" max="100" value="100" oninput="adjustLegitimacyLens(this.value)">
+                        <span id="lensPercent" style="font-weight: 700; color: #38bdf8;">100%</span>
+                    </div>
+                </div>
+                <canvas id="networkCanvas"></canvas>
+            </div>
+
+            <!-- Dual AI Battle Arena -->
+            <div class="battle-bar">
+                <div class="battle-card gcn">
+                    <div class="battle-title">
+                        <span style="color: #ef4444;">LEGACY BANK GCN</span>
+                        <span id="gcnVerdictBadge" style="color: #f87171; font-weight: 800;">FOOLED ⚠️</span>
+                    </div>
+                    <div class="battle-verdict" id="gcnVerdictText">
+                        <b>High False Positive:</b> Flagged Sharma Kirana as a mule ring due to fan-in degree! Criminal mules evading.
+                    </div>
+                </div>
+
+                <div class="battle-card adamule">
+                    <div class="battle-title">
+                        <span style="color: #10b981;">ADAMULE DEFENSE</span>
+                        <span id="adamuleVerdictBadge" style="color: #34d399; font-weight: 800;">BUSTED 🛡️</span>
+                    </div>
+                    <div class="battle-verdict" id="adamuleVerdictText">
+                        <b>Zero False Positives:</b> Legitimacy regularizer protects Kirana store; multi-hop structuring ring neutralized!
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right: Holographic Entity Dossier & Copilot -->
+        <section class="glass-panel">
+            <div class="panel-header">
+                <span>🕵️ AML INTELLIGENCE HUD</span>
+                <span style="font-size: 0.72rem; color: #a855f7;">LIVE RADAR</span>
+            </div>
+
+            <div class="panel-body">
+                <!-- Holographic Node Dossier -->
+                <div class="dossier-card" id="entityDossier">
+                    <div class="dossier-header">
+                        <div>
+                            <div class="dossier-name" id="dossierName">Mule A (Student)</div>
+                            <div style="font-size: 0.7rem; color: #94a3b8;" id="dossierSub">Account: ACC_008892</div>
+                        </div>
+                        <span class="dossier-tag tag-mule" id="dossierTag">MULE SUSPECT</span>
+                    </div>
+
+                    <div class="dossier-grid">
+                        <div class="dossier-item">
+                            <span>KYC Status</span>
+                            <b id="dossierKYC" style="color: #fca5a5;">Tier 1 (Partial)</b>
+                        </div>
+                        <div class="dossier-item">
+                            <span>Suspicion Score</span>
+                            <b id="dossierRisk" style="color: #ef4444;">98.4% (Critical)</b>
+                        </div>
+                        <div class="dossier-item">
+                            <span>Net Flow</span>
+                            <b id="dossierFlow">₹45,000 / ₹44,800</b>
+                        </div>
+                        <div class="dossier-item">
+                            <span>Dwell Time</span>
+                            <b id="dossierDwell">&lt; 8 Mins (Fast Pass)</b>
+                        </div>
+                    </div>
+
+                    <div class="dossier-actions">
+                        <button class="btn-action btn-freeze" id="freezeBtn" onclick="freezeSelectedNode()">❄️ Freeze Account</button>
+                        <button class="btn-action" onclick="traceRingFromSelected()">🕸️ Trace Ring</button>
+                        <button class="btn-action" onclick="openSARModal()">📄 File SAR</button>
+                    </div>
+                </div>
+
+                <!-- Chat & Forensic Copilot -->
+                <div class="chat-container">
+                    <div class="chat-history" id="chatHistory">
+                        <div class="chat-msg msg-bot">
+                            👋 <b>AI AML Intelligence Copilot Online:</b> Monitoring transaction graph for layering rings, smurfing, and camouflage fraud.
+                        </div>
+                    </div>
+
+                    <div class="preset-prompts">
+                        <div style="font-size: 0.7rem; color: #94a3b8;">Forensic Quick Queries:</div>
+                        <button class="btn-preset" onclick="askPreset('ring')">🚨 Trace Active Structuring Ring #1</button>
+                        <button class="btn-preset" onclick="askPreset('sharma')">🏬 Audit Sharma Kirana (Hard Negative)</button>
+                        <button class="btn-preset" onclick="askPreset('fourier')">📈 Explain Fourier Temporal Encoding</button>
+                    </div>
+
+                    <div class="chat-input-bar">
+                        <input type="text" id="userChatInput" placeholder="Ask investigator copilot..." onkeydown="if(event.key==='Enter') sendUserChat()">
+                        <button onclick="sendUserChat()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom Cyberpunk Live Ticker -->
+    <footer class="ticker-footer">
+        <div class="ticker-label">LIVE TX FEED ⚡</div>
+        <div class="ticker-marquee" id="txMarquee">
+            <span class="ticker-item"><span class="ticker-tag-clean">[APPROVED]</span> ₹240.00 • Sharma Kirana • Retail P2M Grocery</span>
+            <span class="ticker-item"><span class="ticker-tag-busted">[INTERCEPTED]</span> ₹48,500.00 • ACC_008892 (Rohan V.) • Rapid Pass-Through Mule</span>
+            <span class="ticker-item"><span class="ticker-tag-clean">[APPROVED]</span> ₹1,200.00 • Swiggy Delivery • Verified P2M</span>
+            <span class="ticker-item"><span class="ticker-tag-busted">[FLAGGED CAMOUFLAGE]</span> ₹350.00 • Illicit Mule → Chai Point (Synthetic Edge Suppressed)</span>
+            <span class="ticker-item"><span class="ticker-tag-busted">[CASH-OUT LOCKED]</span> ₹68,000.00 • ATM Hub Terminal #04 • Destination Frozen</span>
+        </div>
+    </footer>
+
+    <!-- Scanner & Decision Overlay Modal -->
+    <div class="scanner-modal" id="scannerModal">
+        <div class="radar-sweep"></div>
+        <div style="color: #38bdf8; font-weight: 700; margin-bottom: 16px;" id="scanStatus">Scanning Graph Topology...</div>
+        <div class="verdict-card" id="verdictCard">
+            <div id="verdictContent"></div>
+        </div>
+    </div>
+
+    <!-- Official SAR Report Modal -->
+    <div class="scanner-modal" id="sarModal">
+        <div class="sar-modal-card">
+            <div class="sar-header">
+                <div>
+                    <div class="sar-title">OFFICIAL SUSPICIOUS ACTIVITY REPORT (SAR)</div>
+                    <div style="font-size: 0.7rem; color: #94a3b8;">FINANCIAL INTELLIGENCE UNIT (FIU-IND / FinCEN REF: SAR-2026-0908)</div>
+                </div>
+                <button class="btn-ctrl" onclick="closeSARModal()">✕ Close</button>
+            </div>
+            
+            <div class="sar-body" id="sarModalContent">
+                <!-- Injected via JavaScript -->
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+                <button class="btn-pay" style="flex: 1;" onclick="printSAR()">🖨️ Export PDF / Print SAR</button>
+                <button class="btn-ctrl" style="flex: 1; justify-content: center;" onclick="closeSARModal()">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="audio.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
