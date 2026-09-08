@@ -29,7 +29,13 @@
         </div>
 
         <div class="header-controls">
-            <button class="btn-ctrl" id="sarBtn" onclick="openSARModal()">📄 Generate SAR</button>
+            <button class="btn-ctrl" id="globeToggleBtn" onclick="toggleGlobeView()">🌐 3D Cyber Globe</button>
+            <button class="btn-ctrl" id="voiceBtn" onclick="toggleVoiceRecognition()">🎙️ Voice AI</button>
+            <button class="btn-ctrl" onclick="openCampaignModal()">🎯 Story Mode</button>
+            <button class="btn-ctrl" onclick="openChaosModal()">⚡ Chaos</button>
+            <button class="btn-ctrl" onclick="openCryptoModal()">⛓️ Crypto</button>
+            <button class="btn-ctrl" onclick="exportFullEvidencePack()">📁 Evidence</button>
+            <button class="btn-ctrl" id="sarBtn" onclick="openSARModal()">📄 SAR</button>
             <button class="btn-ctrl" id="audioBtn" onclick="toggleAudio()">🔊 Audio On</button>
         </div>
     </header>
@@ -242,6 +248,7 @@
                     </div>
                 </div>
                 <canvas id="networkCanvas"></canvas>
+                <div id="globeContainer" style="display: none; width: 100%; height: 100%; position: relative;"></div>
             </div>
 
             <!-- Dual AI Battle Arena -->
@@ -380,7 +387,79 @@
         </div>
     </div>
 
+    <!-- Campaign Story Mode Modal -->
+    <div class="scanner-modal" id="campaignModal">
+        <div class="sar-modal-card" style="max-width: 580px;">
+            <div class="sar-header" style="border-color: #a855f7;">
+                <div>
+                    <div class="sar-title" style="color: #c084fc;">🎯 CYBER DETECTIVE CAMPAIGN</div>
+                    <div style="font-size: 0.7rem; color: #94a3b8;">STORY MODE & CLEARANCE RANKINGS</div>
+                </div>
+                <button class="btn-ctrl" onclick="closeCampaignModal()">✕ Close</button>
+            </div>
+            <div id="campaignCardContent"></div>
+        </div>
+    </div>
+
+    <!-- Chaos Engine Modal -->
+    <div class="scanner-modal" id="chaosModal">
+        <div class="sar-modal-card" style="max-width: 540px;">
+            <div class="sar-header" style="border-color: #ef4444;">
+                <div>
+                    <div class="sar-title" style="color: #f87171;">⚡ CHAOS ENGINE & STRESS TESTER</div>
+                    <div style="font-size: 0.7rem; color: #94a3b8;">REAL-TIME SYSTEM SHOCK INJECTIONS</div>
+                </div>
+                <button class="btn-ctrl" onclick="closeChaosModal()">✕ Close</button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+                <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px;">
+                    <b style="color: #f87171;">💥 SIM-Swap Surge</b>
+                    <p style="font-size: 0.78rem; color: #94a3b8; margin: 4px 0 8px;">Simulate 100 simultaneous account takeovers and test velocity dampers.</p>
+                    <button class="btn-heist" style="width: 100%; padding: 8px; font-size: 0.85rem;" onclick="injectChaos('simswap')">Inject SIM-Swap Burst</button>
+                </div>
+                <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px;">
+                    <b style="color: #34d399;">🛍️ Diwali Festival Rush (10x Load)</b>
+                    <p style="font-size: 0.78rem; color: #94a3b8; margin: 4px 0 8px;">10x consumer traffic surge to verify zero false positives on genuine merchants.</p>
+                    <button class="btn-pay" style="width: 100%; padding: 8px; font-size: 0.85rem; background: #059669;" onclick="injectChaos('diwali')">Trigger Retail Festival Rush</button>
+                </div>
+                <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px;">
+                    <b style="color: #f59e0b;">🎭 Syndicate Adaptive Retaliation</b>
+                    <p style="font-size: 0.78rem; color: #94a3b8; margin: 4px 0 8px;">Adversarial algorithm shifts topological routes dynamically as you freeze nodes.</p>
+                    <button class="btn-ctrl" style="width: 100%; justify-content: center; border-color: #f59e0b; color: #f59e0b;" onclick="injectChaos('retaliate')">Simulate Attacker Retaliation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Crypto Peel Chain Modal -->
+    <div class="scanner-modal" id="cryptoModal">
+        <div class="sar-modal-card" style="max-width: 580px;">
+            <div class="sar-header" style="border-color: #f59e0b;">
+                <div>
+                    <div class="sar-title" style="color: #fbbf24;">⛓️ CRYPTO & WEB3 MIXER FORENSICS</div>
+                    <div style="font-size: 0.7rem; color: #94a3b8;">USDT / ETHEREUM PEEL CHAIN DETECTOR</div>
+                </div>
+                <button class="btn-ctrl" onclick="closeCryptoModal()">✕ Close</button>
+            </div>
+            <div style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 12px;">
+                Trace unhosted wallet structuring, privacy pool mixing, and peel chains bypassing FATF Travel Rule reporting thresholds.
+            </div>
+            <button class="btn-pay" style="width: 100%; background: #d97706;" onclick="tracePeelChain()">
+                🔍 Trace On-Chain Peel Chain
+            </button>
+            <div id="cryptoTraceResult"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="three.min.js"></script>
     <script src="audio.js"></script>
+    <script src="globe.js"></script>
+    <script src="voice.js"></script>
+    <script src="campaign.js"></script>
+    <script src="chaos.js"></script>
+    <script src="crypto.js"></script>
+    <script src="evidence.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
