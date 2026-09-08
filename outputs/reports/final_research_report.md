@@ -16,9 +16,9 @@
 | Model / Setting | Clean Recall | Attack Recall | Recall Drop | F1-Score | Overall FPR | Hard-Negative FPR |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | GCN | 1.0000 | 1.0000 | 0.0000 | 0.6667 | 1.0000 | 1.0000 |
-| GAT | 1.0000 | 1.0000 | 0.0000 | 0.7500 | 0.6667 | 1.0000 |
+| GAT | 1.0000 | 0.6667 | 0.3333 | 0.5714 | 0.6667 | 1.0000 |
 | CAREGNN | 1.0000 | 1.0000 | 0.0000 | 0.6667 | 1.0000 | 1.0000 |
-| AdaMule (Std) | 1.0000 | 1.0000 | 0.0000 | 0.6667 | 1.0000 | 1.0000 |
+| AdaMule (Std) | 0.6667 | 0.6667 | 0.0000 | 0.5714 | 0.6667 | 1.0000 |
 | AdaMule (Robust) | 0.3333 | 0.3333 | 0.0000 | 0.5000 | 0.0000 | 0.0000 |
 
 ## 4. Ablation Analysis
@@ -30,7 +30,7 @@ Ablations isolating individual architectural mechanisms:
 | Ablation Variant | Adversarial Recall | Recall Drop | Hard-Negative FPR | Key Finding |
 | :--- | :---: | :---: | :---: | :--- |
 | Ablation J: No Legitimacy Module | 0.6667 | 0.0000 | 0.0000 | Without legitimacy regularizer, false positive rate on irregular merchants increases. |
-| Ablation K: No Adversarial Training | 1.0000 | 0.0000 | 1.0000 | Without min-max training, detector suffers from severe recall drop under evasive structuring. |
+| Ablation K: No Adversarial Training | 0.6667 | 0.0000 | 1.0000 | Without min-max training, detector suffers from severe recall drop under evasive structuring. |
 | Ablation I: Unconstrained Perturbations | 0.3333 | 0.0000 | 0.0000 | Unconstrained attacks achieve greater evasion but create financially impossible anomalies. |
 
 ## 5. Research Findings & Empirical Insights
