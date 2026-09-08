@@ -2,7 +2,17 @@
 
 Welcome to the **AdaMule Master Knowledge Base**. 
 
-If you are wondering **"What is this project?"**, **"How does it work?"**, or **"What did we build?"**, this folder contains everything you need to know in plain English and complete technical detail.
+If you are wondering **"What is this project?"**, **"How does it work?"**, or **"What did we build?"**, this folder contains everything you need to know with both **descriptive text AND visual diagram images** illustrating every single concept.
+
+---
+
+### 🖼️ Master Architecture Overview
+![AdaMule End-to-End Pipeline Architecture](images/03_adamule_pipeline_architecture.png)
+
+---
+
+### 🖼️ War Room Interactive Features Map
+![Cyber War Room Feature Map](images/04_cyber_war_room_features.png)
 
 ---
 
@@ -13,12 +23,14 @@ If you are wondering **"What is this project?"**, **"How does it work?"**, or **
    - Why banks lose billions every year.
    - The "Sharma Kirana" False Alarm dilemma (why standard AI fails).
    - What AdaMule is and why it was created.
+   - Includes **Visual Diagrams** on how money muling works and why Sharma Kirana gets wrongly frozen.
 
 2. [**02. How It Works (Architecture & Dataflow)**](02_HOW_IT_WORKS_ARCHITECTURE.md)
    - Step-by-step pipeline: from transaction generation to graph neural networks.
    - How transactions become graph nodes and edges.
    - The Legitimacy-Preserving Regularizer (the secret sauce).
    - Min-Max Adversarial Retraining (how the AI trains against hackers).
+   - Includes **Visual Diagrams & Empirical Benchmark Charts** (Recall, FPR, Ablation).
 
 3. [**03. Every Single Feature Explained**](03_ALL_FEATURES_EXPLAINED.md)
    - Full walkthrough of all 10 interactive features:
@@ -32,6 +44,7 @@ If you are wondering **"What is this project?"**, **"How does it work?"**, or **
      * Court-Admissible Evidence Bundle Exporter
      * PhonePe / UPI Mobile Simulator
      * Streamlit Multi-Tab Research Dashboard
+   - Includes **Interactive Feature Map Diagram**.
 
 4. [**04. Technology Stack & Libraries Used**](04_TECHNOLOGY_STACK.md)
    - Every language, framework, algorithm, and library used.
@@ -47,4 +60,4 @@ If you are wondering **"What is this project?"**, **"How does it work?"**, or **
    - A complete tour of every folder, file, script, and configuration in this repository.
 
 ---
-*Created automatically for full clarity and technical transparency.*
+*Created automatically for full clarity, visual understanding, and technical transparency.*

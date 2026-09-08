@@ -2,7 +2,7 @@
 
 ## 1. The Real-World Crime: What is a Money Mule?
 
-Imagine a cybercriminal syndicate steals ₹10,00,000 (10 Lakh Rupees) through an online banking phishing scam.
+Imagine a cybercriminal syndicate steals **₹10,00,000 (10 Lakh Rupees)** through an online banking phishing scam.
 The criminals **cannot** simply withdraw ₹10 Lakhs to their own bank accounts, because:
 1. Indian banks (and international banks) flag any single transaction above ₹50,000 under AML (Anti-Money Laundering) regulations.
 2. Police will immediately freeze their account and arrest them.
@@ -15,6 +15,19 @@ They recruit **Money Mules**!
   2. They route these transfers through student accounts (*Mule A*, *Mule B*, *Mule C*).
   3. Within 10 minutes, the students transfer the money to an ATM cashout terminal or buy cryptocurrency.
   4. The stolen money has now vanished into physical cash!
+
+### 🖼️ Visual Diagram: How Money Mule Smurfing Works
+![How Money Mule Structuring & Smurfing Works](images/01_how_money_mule_works.png)
+
+```
+[Phishing Victims] ---> (₹45k / ₹30k) ---> [Student Mule A] 
+                                                  |
+                                                  v (Rapid Pass-Through < 8 mins)
+                                           [Dormant Mule B & C]
+                                                  |
+                                                  v (ATM / Crypto Cashout)
+                                           [Stolen Cash Vanishes! 💸]
+```
 
 ---
 
@@ -32,6 +45,29 @@ Here is why traditional AI fails catastrophically in the real world:
 - Sharma Kirana has **hundreds of incoming payments** every morning, and in the afternoon, the shopkeeper transfers money to wholesale grain suppliers.
 - **Traditional GNNs (like standard GCN, GAT, and CARE-GNN) cannot tell the difference between a criminal money mule aggregator and Sharma Kirana Store!**
 - As a result, standard AI triggers a **100% False Positive Rate (FPR = 1.0000)** on honest merchants! It freezes the bank accounts of innocent small business owners, causing public outrage and legal lawsuits for banks.
+
+### 🖼️ Visual Diagram: The Sharma Kirana Dilemma
+![The Sharma Kirana False Positive Dilemma](images/02_sharma_kirana_dilemma.png)
+
+```
++------------------------------------+      +------------------------------------+
+|   SHARMA KIRANA STORE (MERCHANT)   |      |      CRIMINAL MULE AGGREGATOR      |
+|  • Hundreds of genuine customers   |      |  • Multiple victims funneling funds|
+|  • Small retail ticket sizes       |      |  • Large structured bursts (₹48k)  |
+|  • Verified GST business profile   |      |  • Dwell time < 8 mins to ATM hub  |
++------------------------------------+      +------------------------------------+
+                  |                                           |
+                  v                                           v
+       [Traditional GNN View]                      [Traditional GNN View]
+    🚨 WRONGLY FROZEN (False Alarm!)             ⚠️ BLENDS IN VIA CAMOUFLAGE!
+                  |                                           |
+                  +---------------------+---------------------+
+                                        |
+                                        v
+                            [AdaMule Solution]
+     ✅ Sharma Kirana: Protected (0.0000 False Alarm Rate)
+     🚨 Criminal Mule: Unmasked & Frozen Before Cashout!
+```
 
 ---
 

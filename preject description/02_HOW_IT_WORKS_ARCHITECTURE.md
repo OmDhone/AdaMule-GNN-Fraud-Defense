@@ -6,6 +6,9 @@ This document explains the complete engineering pipeline of AdaMule, from data g
 
 ## 1. High-Level Closed-Loop Architecture
 
+### 🖼️ Visual Architecture Flowchart
+![AdaMule End-to-End Pipeline Architecture](images/03_adamule_pipeline_architecture.png)
+
 ```
 +-------------------------------------------------------------------------+
 |                  1. SYNTHETIC TRANSACTION ENGINE                        |
@@ -60,7 +63,7 @@ Because real banking transaction data contains strict personal privacy (PII) res
   * *Scenario A*: Normal everyday peer-to-peer (P2P) transfers.
   * *Scenario B*: **Legitimate Merchant Aggregator** (The critical hard negative: *Sharma Kirana*).
   * *Scenario C*: Irregular / seasonal wholesale merchant.
-  * *Scenario D*: Simple 3-hop linear mule ring ($A 	o B 	o C 	o 	ext{Cashout}$).
+  * *Scenario D*: Simple 3-hop linear mule ring ($A \to B \to C \to \text{Cashout}$).
   * *Scenario E*: Fan-in aggregation mule.
   * *Scenario F*: Fan-out dispersal mule.
   * *Scenario G*: Multi-hop layered network.
@@ -68,9 +71,9 @@ Because real banking transaction data contains strict personal privacy (PII) res
   * *Scenario I*: Adaptive evasive structuring.
 
 ### Step 2: Leak-Free Temporal Graph Partitioning (`src/adamule/data/dataset.py`)
-In real life, an AI cannot look into the future. Many bad academic papers cheat by randomly shuffling transactions across train and test sets, causing "future data leakage".
+In real life, an AI cannot look into the future. Many academic papers cheat by randomly shuffling transactions across train and test sets, causing "future data leakage".
 AdaMule uses **strictly chronological temporal splitting**:
-$$	ext{Train Period} \le 	ext{Validation Period} \le 	ext{Test Period}$$
+$$\text{Train Period} \le \text{Validation Period} \le \text{Test Period}$$
 This ensures 100% honest evaluation.
 
 ### Step 3: Deep Graph Neural Network Models (`src/adamule/models/`)
@@ -100,7 +103,20 @@ To test if the AI can be fooled, AdaMule implements an adversarial attack simula
 
 ### Step 5: Min-Max Adversarial Retraining (`src/adamule/training/`)
 To make AdaMule immune to these attacks, it uses game-theoretic min-max training:
-$$\min_{	heta} \max_{\delta \in \Delta} \mathcal{L}(	heta; G + \delta)$$
+$$\min_{\theta} \max_{\delta \in \Delta} \mathcal{L}(\theta; G + \delta)$$
 1. The attacker creates the most evasive perturbations ($\max$).
-2. The detector trains its weights $	heta$ to correctly identify the evasive subgraphs ($\min$).
+2. The detector trains its weights $\theta$ to correctly identify the evasive subgraphs ($\min$).
 3. Result: The hardened AdaMule model maintains high detection rates even when criminals actively try to trick it!
+
+---
+
+## 3. Empirical Research Benchmark Results
+
+### 🖼️ Hard-Negative False Positive Rate Comparison
+![Hard Negative False Positive Rate](images/hard_negative_fpr_comparison.png)
+
+### 🖼️ Clean vs. Adversarial Recall Comparison
+![Clean vs Adversarial Recall Comparison](images/clean_vs_adversarial_recall.png)
+
+### 🖼️ Architectural Ablation Study
+![Ablation Study](images/ablation_study.png)

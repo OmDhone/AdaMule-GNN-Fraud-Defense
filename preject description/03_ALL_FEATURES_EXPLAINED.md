@@ -2,6 +2,9 @@
 
 AdaMule includes an extensive suite of interactive features. Here is an in-depth guide to all 10 major features:
 
+### 🖼️ Visual Feature Map of the Command Center
+![Cyber War Room Feature Map](images/04_cyber_war_room_features.png)
+
 ---
 
 ### 1. 🚨 Red Team Syndicate Heist Simulator
@@ -38,7 +41,7 @@ AdaMule includes an extensive suite of interactive features. Here is an in-depth
 - **How to use**: Click the **`🌐 3D Cyber Globe`** button in the header.
 - **What it shows**:
   * Visualizes cross-border **Hawala & International Laundering Corridors**.
-  * Shows funds moving across **Mumbai $	o$ Delhi $	o$ Dubai $	o$ Zurich $	o$ London $	o$ Singapore $	o$ Hong Kong $	o$ New York**.
+  * Shows funds moving across **Mumbai $\to$ Delhi $\to$ Dubai $\to$ Zurich $\to$ London $\to$ Singapore $\to$ Hong Kong $\to$ New York**.
   * Glowing 3D ballistic Bezier curves arch into space above the Earth's surface.
   * Mouse drag rotates the globe; scroll wheel zooms in and out.
 
@@ -48,12 +51,12 @@ AdaMule includes an extensive suite of interactive features. Here is an in-depth
 - **What it is**: Talk to the system through your microphone like a real military or intelligence operations room.
 - **How to use**: Click **`🎙️ Voice AI`** in the header.
 - **Spoken Voice Commands**:
-  * *"Freeze account"* $	o$ Freezes the selected node; the AI speaks back: *"Account frozen. Precautionary hold applied."*
-  * *"Trace ring"* $	o$ Unmasks topological dependencies to the ATM cashout hub.
-  * *"Execute heist"* $	o$ Launches the syndicate attack.
-  * *"3D globe"* $	o$ Switches to the 3D WebGL cyber globe hands-free!
-  * *"Show graph"* $	o$ Switches back to the 2D physics graph.
-  * *"Generate SAR"* $	o$ Opens the official legal Suspicious Activity Report.
+  * *"Freeze account"* $\to$ Freezes the selected node; the AI speaks back: *"Account frozen. Precautionary hold applied."*
+  * *"Trace ring"* $\to$ Unmasks topological dependencies to the ATM cashout hub.
+  * *"Execute heist"* $\to$ Launches the syndicate attack.
+  * *"3D globe"* $\to$ Switches to the 3D WebGL cyber globe hands-free!
+  * *"Show graph"* $\to$ Switches back to the 2D physics graph.
+  * *"Generate SAR"* $\to$ Opens the official legal Suspicious Activity Report.
 
 ---
 
@@ -63,7 +66,7 @@ AdaMule includes an extensive suite of interactive features. Here is an in-depth
   * **Mission 1: The Campus Smurfs (Rookie • +250 XP)**: Catch a 2-hop student mule ring laundering phished tuition fees.
   * **Mission 2: The Kirana Smokescreen (Detective • +500 XP)**: Exonerate the grocery store and isolate the camouflaged structuring ring.
   * **Mission 3: Operation Ghost Mixer (Master • +1000 XP)**: Defeat a 5-hop RL gradient-evasion attack with temporal jitter.
-- Earn rank promotions: **Field Agent $	o$ Senior Analyst $	o$ Chief Inspector**.
+- Earn rank promotions: **Field Agent $\to$ Senior Analyst $\to$ Chief Inspector**.
 
 ---
 
@@ -97,9 +100,9 @@ AdaMule includes an extensive suite of interactive features. Here is an in-depth
 - **Features**:
   * Select payee (Student Mule vs. Sharma Kirana Store).
   * Select amount (₹250, ₹5,000, ₹48,500, ₹90,000).
-  * Tap **`Pay via UPI PIN`** $	o$ triggers live radar scan:
-    * If paying a mule $	o$ **PAYMENT INTERCEPTED** (red alert & alarm sound).
-    * If paying a verified merchant $	o$ **PAYMENT APPROVED** (green checkmark & chime).
+  * Tap **`Pay via UPI PIN`** $\to$ triggers live radar scan:
+    * If paying a mule $\to$ **PAYMENT INTERCEPTED** (red alert & alarm sound).
+    * If paying a verified merchant $\to$ **PAYMENT APPROVED** (green checkmark & chime).
 
 ---
 
